@@ -37,7 +37,11 @@ workflows:
   My-firt-CI:
     jobs:
       - build
-      - test
-      - analyze
+      - test:
+          requires:
+            - build
+      - analyze:
+          requires:
+            - test
           
           
